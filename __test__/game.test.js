@@ -1,12 +1,11 @@
 const Game = require('../src/game').default
 const fs = require('fs')
 
-describe('Compiled JavaScript', () => {
-  it('contains valid code', async () => {
-    const compiledCode = await fs.promises.readFile('./public/main.js', 'utf8')
-    expect(typeof compiledCode).toBe('string')
-    expect(compiledCode).toMatch(/function main\(\) {/)
-    // Add more specific assertions as needed
+describe('App', () => {
+  it('Contains the compiled JavaScript', async () => {
+     const compiledCode = await fs.promises.readFile('./public/main.js', 'utf8')
+     expect(typeof compiledCode).toBe('string')
+     expect(compiledCode).toMatchSnapshot()
   })
 })
 
