@@ -20,7 +20,6 @@ describe('Compiled JavaScript', () => {
   })
 })
 
-
 describe('Game', () => {
   let game, p1, p2
   beforeEach(() => {
